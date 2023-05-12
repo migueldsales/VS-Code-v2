@@ -1,0 +1,188 @@
+.header {
+    background-color: $clr-dark;
+    width: 100%;
+
+    .container{
+        padding: 0;
+        margin: 0 2rem;
+    }
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        align-items: center;
+    }
+
+    .branding {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0;
+        img {
+            width: 1.6rem;
+        }
+
+        a {
+            color: white;
+            span {
+                font-size: 1.1rem;
+                margin-left: .5rem;
+                font-weight: 500;
+            }
+        }
+    }
+
+
+    &-mobile {
+        position: absolute;
+        background-color: $clr-dark;
+        top: 6.4rem;
+        left: 0;
+        width: 100%;
+        max-height: 0rem;
+        overflow: hidden;
+        transition: 0.5s ease;
+
+        &.open {
+            max-height: 19rem;
+            transition: 0.5s ease;
+            overflow: hidden;
+            overflow-y: scroll;
+
+        }
+
+        ul {
+            li {
+                cursor: pointer;
+                padding: .5rem;
+
+                a {
+                    color: $clr-light
+                }
+            }
+        }
+    }
+
+    &-download {
+        i {
+            display: none;
+            color: $clr-light;
+        }
+        a{
+            padding: 1rem;
+            background-color: $clr-blue;
+        }
+        form{
+            input{
+                
+                height: 3rem;
+                border: none;
+                
+            }
+        }
+    }
+
+    .btn {
+        display: flex;
+        font-weight: 600;
+        color: $clr-light;
+
+        i {
+            display: flex;
+            margin-right: 1rem;
+        }
+
+        a {
+            margin-left: 2rem;
+        }
+
+    }
+
+    .header-desktop {
+        display: none;
+    }
+
+
+    .toggle-menu {
+        padding: 1rem;
+        border-radius: .5rem;
+
+        &:hover {
+            background-color: $clr-blue;
+        }
+
+        span {
+            width: 30px;
+            height: 2px;
+            background-color: $clr-light;
+            display: block;
+            border-radius: 5rem;
+            transition: 0.5s ease;
+
+
+
+            &:nth-child(2) {
+                margin: .5rem 0;
+            }
+        }
+
+        &.open {
+            overflow-y: hidden;
+
+            span {
+                &:first-child {
+                    transform: translate(0, 7px) rotate(225deg);
+                    transition: .5s ease;
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                    transition: .5s ease;
+                }
+
+                &:last-child {
+                    transform: translate(0, -13px) rotate(-225deg);
+                    transition: .5s ease;
+                }
+            }
+        }
+    }
+
+    @include mediaQuery ($break-lg){
+        .header{
+            &-wrapper{
+                justify-content: space-between;
+            }
+            &-desktop{
+                display: flex;
+                align-items: center;
+                
+                ul{
+                    justify-content: space-between;
+                    display: flex;
+                    gap: 2rem;
+                    li{
+                        a{
+                            color: $clr-gray;
+                        }
+                    }
+                }
+            }    
+            &-download{
+                gap: 2rem;
+                display: flex;
+                text-align: center;
+                align-items: center;
+                form{
+                    i{
+                        display: block;
+                    }
+                }
+            }
+        }
+        .toggle-menu{
+            display: none;
+        }
+    }
+}
+
+

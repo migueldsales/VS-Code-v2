@@ -1,0 +1,108 @@
+.links{
+    padding: 5rem 0;
+    background: $clr-dark;
+    img{
+        width: 10rem;
+    }
+    &__drop{
+        margin: 5rem 0;
+        &__item{
+            &:not(:first-child),&:not(:last-child){
+                margin: 3rem 0;
+            }
+            h4{
+                color: $clr-gray;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                i{
+                    transition: .5s ease;
+                    &.open{
+                        transform: rotate(180deg);
+                        transition: .5s ease;
+                    }
+                }
+            }
+            ul{
+                margin: 0 2rem;
+                max-height: 0rem;
+                overflow: hidden;
+                transition: .5s ease;
+                &.open{
+                    max-height: 15rem;
+                    transition: .5s ease;
+                }
+                li{
+                    padding: 1rem 0;
+                    a{
+                        color: $clr-light;
+                        font-size: 2rem;
+                    }
+                    &:hover{
+                        cursor: pointer;
+                        a{
+                            color: $clr-green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__social{
+        ul{
+            display: flex;
+            gap: 2rem;
+            li{
+                a{
+                    color: $clr-light;
+                    display: inline-block;
+                    background: gray;
+                    padding: 1rem;
+                    border-radius: 5rem;
+                    width: 4.5rem;
+                    text-align: center;
+                }
+                &:hover{
+                    cursor: pointer;
+                    a{
+                        color: $clr-green;
+                    }
+                }
+            }
+        }
+    }
+    @include mediaQuery($break-lg){
+        &__wrapper{
+            display: grid;
+            grid-template-columns: .5fr 2fr 1.5fr;
+            grid-gap: 5rem;
+        }
+        &__drop{
+            margin: 0;
+            display: flex;
+            align-items: start;
+            gap: 10rem;
+            &__item{
+                &:not(:first-child),&:not(:last-child){
+                    margin: 0;
+                }
+                h4{
+                    pointer-events: none;
+                    i{
+                        display: none;
+                    }
+                }
+                ul{
+                    max-height: 25rem;
+                    margin: 1rem 0;
+                }
+
+            }
+        }
+        &__social{
+            ul{
+                justify-content: flex-end;
+            }
+        }
+    }
+}
