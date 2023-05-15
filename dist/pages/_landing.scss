@@ -105,6 +105,9 @@
             p{
                 width: 50rem;
                 text-align: center;
+                a{
+                    
+                }
             }
         }
         &-content{
@@ -274,16 +277,26 @@
     ul{
         text-align: center;
         li{
-            
+        transition: .5s ease;
+        &:nth-child(even){
+ 
+            background-color: $clr-l-gray;
+        }
+          &:nth-child(4) img:hover {
+            transform: scale(1.05);
+            transition: .5s ease;
+          } 
             .feature-content{
-                margin: 3.5rem 0;
+      
                 img{
                     width: 16rem;
+                    transition: .5s ease;
+                    margin-top: 3.5rem ;
                 }
             }
             .feature-text{
                 padding: 1rem;
-                text-align: left;
+                text-align: justify;
                 h2{
                     margin-bottom: 2rem;
                     font-size: 1.2rem;
@@ -299,4 +312,184 @@
     }
 }
 
+.codes{
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: $clr-l-gray;
+    &-wrapper{
+        
+        h2{
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: lighter;
+            margin: 2rem;
+        }
+    }
 
+    &-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+        p{
+            margin: 1rem 0;
+        }
+        
+        .list1, .list2{
+            p{
+                align-items: center;
+            }
+        }
+    }
+
+    .button-primary{
+        justify-content: center;
+        margin: 2rem auto;
+        padding: 1rem 1rem;
+        background-color: $clr-blue;
+        width: 14rem;
+        text-align: center;
+    }
+
+    a:last-child{
+        color: $clr-light;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    #more{
+        display: flex;
+        margin: 0 auto;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        color: $clr-blue;
+    }
+    
+}
+
+.download{
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    &-wrapper{
+        
+    }
+    &-option{
+        img{
+            display: flex;
+            margin: 0 auto;
+            height: 7rem;
+        }
+        .button{
+            display: grid;
+            text-align: center;
+            justify-content: center;
+            margin: 2rem auto;
+            padding: 1rem 1rem;
+            background-color: $clr-blue;
+            width: 14rem;
+            color: $clr-light;
+            a{
+                font-weight: 600;
+                color: $clr-light;
+                i{
+                    margin-right: 1rem;
+                }
+            } 
+            small{
+                font-size: .7rem;
+            }
+        }
+        .linux-button{
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            .l-button{
+                display: inline-block;
+                text-align: center;
+                justify-content: center;
+                margin: 0 auto;
+                padding: 1rem 1rem;
+                background-color: $clr-blue;
+                width: 8rem;
+                color: $clr-light;
+                a{
+                    font-weight: 600;
+                    color: $clr-light;
+                    i{
+                        margin-right: 1rem;
+                    }
+                } 
+                small{
+                    font-size: .7rem;
+                }
+            }
+        }
+    }
+    &-os{
+        justify-content: center;
+        display: flex;
+        table{
+            margin: 2rem 0;
+            tr{
+                td{
+                    font-size: .8rem;
+                    text-align: center;
+                    &:first-child{
+                    font-size: 1rem;
+                    font-weight: 600;
+                   } 
+                   &:hover{
+                    cursor: pointer;
+                   }
+                   &:not(:first-child){
+                    background-color: $clr-blue;
+                    border-radius: .2rem;
+                    color: $clr-light;
+                    font-size: .5;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.about{
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: $clr-l-gray;
+    &-wrapper{
+        
+    }
+    &-text{
+        text-align: center;
+        margin: 5rem 0;
+        h2{
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        a{
+            cursor: pointer;
+            color: $clr-blue;
+        }
+    }
+
+    .license{
+        width: 15rem;
+        text-align: center;
+        margin: 0 auto;
+        h3{
+            font-weight: 500;
+            font-size: .9rem;
+            margin-bottom: 1rem;
+        }
+        p{
+            font-size: .8rem;
+            line-height: 2rem;
+            a{
+                cursor: pointer;
+                color: $clr-blue;
+            }
+        }
+    }
+}
